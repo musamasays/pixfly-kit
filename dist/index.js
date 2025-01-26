@@ -1,7 +1,7 @@
+import * as React from 'react';
 import { useState, useCallback } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import axios from 'axios';
-import { X, CircleCheck } from 'lucide-react';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -168,16 +168,15 @@ const PixFlyUploader = ({ apiBaseUrl, proj, sign, onUploadSuccess, onUploadError
                                 React.createElement("p", { className: "text-white text-center font-light text-xs mb-2" },
                                     (file.size / 1024).toFixed(2),
                                     " KB"),
-                                file.status === "pending" && (React.createElement("button", { onClick: () => setFiles(files.filter((_, i) => i !== index)), className: "absolute top-1 right-1 bg-gray-700 rounded-full p-1 hover:bg-gray-700 transition-colors duration-200" },
-                                    React.createElement(X, { className: "w-4 h-4 text-red-500" }))),
+                                file.status === "pending" && (React.createElement("button", { onClick: () => setFiles(files.filter((_, i) => i !== index)), className: "absolute top-1 right-1 bg-gray-700 rounded-full p-1 hover:bg-gray-700 transition-colors duration-200" }, "\u274C")),
                                 file.status === "uploading" && (React.createElement("div", { className: "absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-2" },
                                     React.createElement("div", { className: "w-full bg-green-200 rounded-full h-1 dark:bg-green-700" },
                                         React.createElement("div", { className: "bg-green-500 h-1 rounded-full", style: { width: `${file.progress}%` } })),
                                     React.createElement("p", { className: "text-xs text-center mt-1 text-white" },
                                         file.progress,
                                         "%"))),
-                                file.status === "success" && React.createElement(CircleCheck, { className: "w-8 h-8 text-warning-500" }),
-                                file.status === "error" && React.createElement(X, { className: "w-8 h-8 text-red-500" }))),
+                                file.status === "success" && React.createElement("span", null, "\u2705"),
+                                file.status === "error" && React.createElement("span", null, "\u274C"))),
                         file.status === "error" && React.createElement("p", { className: "text-xs text-red-500 mt-1" }, file.error)))))),
                     error && (React.createElement(motion.p, { initial: { opacity: 0, y: -10 }, animate: { opacity: 1, y: 0 }, className: "text-red-500 text-sm mb-4" }, error))),
                 React.createElement("div", { className: "p-4 flex justify-end border-t border-gray-200 dark:border-gray-700" },
