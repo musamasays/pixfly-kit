@@ -140,8 +140,7 @@ const PixFlyUploader = ({ apiBaseUrl, proj, sign, onUploadSuccess, onUploadError
             React.createElement(motion.div, { initial: { scale: 0.9, opacity: 0 }, animate: { scale: 1, opacity: 1 }, exit: { scale: 0.9, opacity: 0 }, style: Object.assign({ height: modalHeight, width: modalWidth }, modalStyles), className: "pf-bg-white pf-dark:bg-gray-800 pf-rounded-2xl pf-shadow-2xl pf-relative pf-w-full pf-max-w-5xl pf-flex pf-flex-col" },
                 React.createElement("div", { className: "pf-p-8 pf-flex-grow pf-overflow-y-auto" },
                     React.createElement("button", { onClick: () => closeModal(), className: "pf-absolute pf-top-4 pf-right-4 pf-text-gray-500 pf-hover:text-gray-700 pf-dark:text-gray-400 pf-dark:hover:text-gray-200 pf-transition-colors pf-duration-200" },
-                        React.createElement("svg", { className: "pf-w-6 pf-h-6", fill: "none", stroke: "#ffffff", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg" },
-                            React.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M6 18L18 6M6 6l12 12" }))),
+                        React.createElement("button", { onClick: () => closeModal(), className: "pf-absolute pf-top-4 pf-right-4 pf-text-gray-500 pf-hover:text-gray-700 pf-dark:text-gray-400 pf-dark:hover:text-gray-200 pf-transition-colors pf-duration-200" }, "\u274C")),
                     React.createElement("h2", { className: "pf-text-2xl pf-font-bold pf-mb-6 pf-text-gray-800 pf-dark:text-white" }, "Upload Your Images"),
                     React.createElement("div", { className: `pf-relative pf-border-2 pf-border-dashed pf-rounded-2xl pf-p-8 pf-mb-6 pf-transition-all pf-duration-300 pf-ease-in-out ${files.length > 0
                             ? "pf-border-green-500 pf-bg-green-50 pf-dark:bg-green-900 pf-dark:bg-opacity-20"
